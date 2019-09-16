@@ -43,11 +43,11 @@ class Ez {
 
   Future<void> waitFor(String key, {Duration timeout}) async {
     if (log) {
-      print("tapping by tooltip $key...");
+      print("waiting for $key...");
     }
     await driver.waitFor(find.byValueKey(key), timeout: timeout);
     if (log) {
-      print("tapped by tooltip $key");
+      print("waited for $key");
     }
   }
 
