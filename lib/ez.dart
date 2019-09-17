@@ -51,6 +51,40 @@ class Ez {
     }
   }
 
+  Future<void> scrollIntoView(String key,
+      {double alignment = 0.0, Duration timeout}) async {
+    if (log) {
+      print("scrolling into $key...");
+    }
+    await driver.scrollIntoView(find.byValueKey(key),
+        alignment: alignment, timeout: timeout);
+    if (log) {
+      print("scrolled into $key");
+    }
+  }
+
+  Future<void> scrollUntilVisible(
+    String scrollable,
+    String item, {
+    double alignment = 0.0,
+    double dxScroll = 0.0,
+    double dyScroll = 0.0,
+    Duration timeout,
+  }) async {
+    if (log) {
+      print("scrolling $scrollable until $item visible...");
+    }
+    await driver.scrollUntilVisible(
+        find.byValueKey(scrollable), find.byValueKey(item),
+        alignment: alignment,
+        dxScroll: dxScroll,
+        dyScroll: dyScroll,
+        timeout: timeout);
+    if (log) {
+      print("scrolled $scrollable until $item became visible");
+    }
+  }
+
   Future<String> getText(String key, {Duration timeout}) async {
     if (log) {
       print("getting text for $key...");

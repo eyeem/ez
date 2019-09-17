@@ -1,6 +1,6 @@
 name: ez
 description: A wrapper class around flutter_driver API. Allows you to replace verbose calls like driver.tap(find.byValueKey("my-key")) with ez.tap("my-key")
-version: 0.0.2
+version: 0.0.3
 author: Łukasz Wiśniewski<luke.cherrish@gmail.com>
 homepage: https://github.com/eyeem/ez
 
